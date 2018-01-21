@@ -62,27 +62,33 @@ fi
 # started, which is not ideal. If application is scaled, then could also
 # occur from multple replicas at the same time. No obvious way to avoid
 # that, so outstanding question as to whether that will cause any issues.
-
+pwd
+ls
 if [ -d /opt/app-root/downloads/plugins ]; then
     cp -rf /opt/app-root/downloads/plugins/* wp-content/plugins/ 2>/dev/null || true
 fi
-
+pwd
+ls
 if [ -d /opt/app-root/downloads/themes ]; then
     cp -rf /opt/app-root/downloads/themes/* wp-content/themes/ 2>/dev/null || true
 fi
-
+pwd
+ls
 if [ -d /opt/app-root/downloads/languages ]; then
     cp -rf /opt/app-root/downloads/languages/* wp-content/languages/ 2>/dev/null || true
 fi
-
+pwd
+ls
 if [ -f /opt/app-root/downloads/configs/wp-config.php ]; then
     cp -f /opt/app-root/downloads/configs/wp-config.php wp-config.php
 fi
-
+pwd
+ls
 if [ -f /opt/app-root/downloads/configs/.htaccess ]; then
     cp -f /opt/app-root/downloads/configs/.htaccess .htaccess
 fi
-
+pwd
+ls
 # Enable WebDav access if authentication realm set and user database exists.
 
 if [ x"$WEBDAV_AUTHENTICATION_REALM" != x"" ]; then
